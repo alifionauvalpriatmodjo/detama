@@ -1,0 +1,214 @@
+/* src/pages/AboutUs.css */
+.about-us-page {
+  width: 100%;
+}
+
+.about-us-container {
+  max-width: 1100px; 
+  margin: 0 auto;
+  padding: 60px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-container h1,
+.about-us-container h2 {
+  text-align: center;
+  color: #0d2c6b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-us-container h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.intro-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- VISION & MISSION --- */
+.vision-mission-wrapper {
+  background-color: #e8f0fe;
+  width: 100%;
+  padding: 80px 0;
+  margin: 40px 0;
+}
+
+.vision-mission-section {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vm-item {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center;
+}
+
+.mission {
+  flex-direction: row-reverse;
+}
+
+.vm-icon {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.vm-text h3 {
+  color: #0d2c6b;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.vm-text p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+}
+
+/* --- PROMISES SECTION --- */
+.promises-section {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.promises-section h2 {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 2.8rem;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.promises-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #a0b4d4;
+}
+
+.promises-section p {
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- CLIENT SECTION (YANG DIPERBAIKI) --- */
+.client-section {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+/* PERBAIKAN: Memperbesar Judul "Our Client" */
+.client-section h2 {
+  font-size: 2.5rem; /* Diperbesar */
+  color: #0d2c6b;
+  font-weight: 700;
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px 80px;
+}
+
+/* PERBAIKAN: Menghapus efek hitam putih (grayscale) */
+.client-logos img {
+  max-height: 70px; /* Sedikit diperbesar agar logo lebih jelas */
+  max-width: 180px;
+  object-fit: contain;
+  
+  /* Filter dihapus agar berwarna asli */
+  filter: none; 
+  opacity: 1; 
+  
+  transition: transform 0.3s ease;
+}
+
+.client-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* --- MOBILE RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: 40px 20px;
+  }
+  
+  .about-us-container h1 {
+    font-size: 2rem;
+  }
+
+  .vm-item, .mission {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .vm-text {
+    text-align: center !important;
+  }
+  
+  .vm-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .promises-section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .promises-section h2 {
+    font-size: 2rem;
+  }
+  
+  .promises-section p {
+    font-size: 1rem;
+  }
+
+  .client-section h2 {
+    font-size: 2rem; /* Ukuran font di HP */
+  }
+
+  .client-logos {
+    gap: 30px;
+  }
+  
+  .client-logos img {
+    max-width: 100px;
+    max-height: 50px;
+  }
+}

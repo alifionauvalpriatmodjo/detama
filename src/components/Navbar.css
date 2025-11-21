@@ -1,0 +1,172 @@
+/* src/components/Navbar.css */
+.navbar {
+  background: #ffffff;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #0d2c6b;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.navbar-logo {
+  color: #0d2c6b;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Desktop Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  height: 80px;
+}
+
+.nav-links {
+  color: #555;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  font-weight: 500;
+}
+
+.nav-links:hover {
+  color: #0d2c6b;
+  transition: all 0.2s ease-out;
+}
+
+.nav-links.active {
+  color: #0d2c6b;
+  border-bottom: 3px solid #0d2c6b;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* --- MOBILE VIEW (SLIDE DARI KANAN) --- */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-logo img {
+    height: 30px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full Width */
+    height: calc(100vh - 80px); /* Full tinggi layar minus navbar */
+    position: absolute;
+    top: 80px;
+    
+    /* --- PERUBAHAN DI SINI (DARI KANAN) --- */
+    left: auto;    /* Pastikan left dimatikan/auto */
+    right: -100%;  /* Sembunyi di sebelah KANAN layar */
+    /* -------------------------------------- */
+    
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: #ffffff;
+    padding: 0; 
+    margin: 0;
+  }
+
+  .nav-menu.active {
+    /* --- PERUBAHAN DI SINI --- */
+    right: 0; /* Geser ke posisi 0 (muncul dari kanan) */
+    /* ------------------------ */
+  }
+
+  .nav-item {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .nav-links:hover {
+    background-color: #f8f9fa;
+    color: #0d2c6b;
+  }
+  
+  .nav-links.active {
+    border-bottom: none;
+    background-color: #e8f0fe;
+    color: #0d2c6b;
+    font-weight: 700;
+  }
+
+  /* Hamburger Icon */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #0d2c6b;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

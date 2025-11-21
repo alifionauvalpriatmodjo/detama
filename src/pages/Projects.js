@@ -212,38 +212,49 @@ const Projects = () => {
             </button>
             <h2 className="modal-title">{selectedProject.name}</h2>
 
-            <div className="modal-image-carousel">
-              {/* Tampilkan Arrow HANYA jika gambar lebih dari 1 */}
-              {activeSlides.length > 1 && (
-                <button className="carousel-arrow left" onClick={prevSlide}>
-                  &#10094;
-                </button>
-              )}
+            {/* CONTAINER BODY MODAL (Flexbox) */}
+            <div className="modal-body">
+              
+              {/* KOLOM KIRI: GAMBAR */}
+              <div className="modal-left">
+                <div className="modal-image-carousel">
+                  {/* Tampilkan Arrow HANYA jika gambar lebih dari 1 */}
+                  {activeSlides.length > 1 && (
+                    <button className="carousel-arrow left" onClick={prevSlide}>
+                      &#10094;
+                    </button>
+                  )}
 
-              {activeSlides.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
-                />
-              ))}
+                  {activeSlides.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image}
+                      alt={`Slide ${index + 1}`}
+                      className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
+                    />
+                  ))}
 
-              {/* Tampilkan Arrow HANYA jika gambar lebih dari 1 */}
-              {activeSlides.length > 1 && (
-                <button className="carousel-arrow right" onClick={nextSlide}>
-                  &#10095;
-                </button>
-              )}
-            </div>
+                  {/* Tampilkan Arrow HANYA jika gambar lebih dari 1 */}
+                  {activeSlides.length > 1 && (
+                    <button className="carousel-arrow right" onClick={nextSlide}>
+                      &#10095;
+                    </button>
+                  )}
+                </div>
+              </div>
 
-            <div className="modal-description">
-              <h4>{selectedProject.description.title}</h4>
-              <ul>
-                {selectedProject.description.tasks.map((task, index) => (
-                  <li key={index}>{task}</li>
-                ))}
-              </ul>
+              {/* KOLOM KANAN: DESKRIPSI */}
+              <div className="modal-right">
+                <div className="modal-description">
+                  <h4>{selectedProject.description.title}</h4>
+                  <ul>
+                    {selectedProject.description.tasks.map((task, index) => (
+                      <li key={index}>{task}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
